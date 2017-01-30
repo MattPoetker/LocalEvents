@@ -1,0 +1,39 @@
+<%= form_for :event do |e| %>
+  <p>
+    <%= e.label :name %><br>
+    <%= e.text_field :name %>
+  </p>
+  <p>
+    <%= e.label :date %><br>
+    <%= e.text_field :date %>
+  </p>
+  <p>
+    <%= e.label :time %><br>
+    <%= e.text_field :time %>
+  </p>
+ 
+  <p>
+    <%= e.label :description %><br>
+    <%= e.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= e.submit %>
+  </p>
+
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= e.submit %>
+  </div>
+<% end %>

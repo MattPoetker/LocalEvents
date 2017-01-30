@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @category.name %></h1>
+<h2>Events in this Category</h2>
+<% @events.each do |e| %>
+<p><%= e.name %></p>
+<p><%= e.date %></p>
+<p><%= e.time %></p>
+<p><%= e.description %></p>
+<hr>
+<% end %>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

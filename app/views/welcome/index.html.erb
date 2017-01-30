@@ -1,0 +1,28 @@
+<%= link_to "Sign Up", new_host_path %> |
+<% if session[:host_id] %>
+<%=	link_to "Logout", logout_path %>
+<% else %>
+<%=	link_to "Login", '/login'%>
+<% end %>
+<%= session[:host_id] %>
+<div>
+<h1>What's Happening?</h1>
+<p>List of Events</p>
+<%= link_to 'Post an Event', new_event_path %>
+<% @events.each do |e| %>
+<h2><%= e.name %><h2>
+<h3><%= e.date %></h3>
+<p><%= e.time %></p>
+<p><%= e.description %></p>
+<p>Hosted by <%= link_to e.host.name, e.host.website %></p>
+<p>Category: <%= e.category.name %></p>
+<% end %>
+</div>
+<div>
+<h1>Categories</h1>
+<% @categories.each do |c| %>
+<h2><%= c.name %></h2>
+<p><%= link_to 'See All Events in This Category', c %></p>
+<% end %>
+</div>
+

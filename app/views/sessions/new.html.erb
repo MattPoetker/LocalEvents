@@ -1,0 +1,19 @@
+<h1>Login</h1>
+<% if flash[:notice] %>
+<%= flash[:notice] %>
+<% end %>
+<%= form_for(:session, url: login_path) do |e| %>
+  <p>
+    <%= e.label :email %><br>
+    <%= e.text_field :email %>
+  </p>
+  <p>
+    <%= e.label :password %><br>
+    <%= e.password_field :password_digest %>
+  </p>
+  <p>
+    <%= e.submit 'Login' %>
+  </p>
+  <% end %>
+
+<%= link_to 'Back', sessions_path %>
