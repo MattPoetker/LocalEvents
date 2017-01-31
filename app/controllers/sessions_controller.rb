@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
     	session[:host_id] = @host.id
     	redirect_to '/'
   	else
-    	redirect_to 'login'
+    	redirect_to '/login'
   	end 
 
   end

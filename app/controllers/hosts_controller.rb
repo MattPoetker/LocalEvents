@@ -17,7 +17,7 @@ class HostsController < ApplicationController
 			session[:host_id] = @host.id 
 			redirect_to '/'
 		else
-			redirect_to 'signup'
+			redirect_to '/signup'
 		end
 	end
 	def host_params

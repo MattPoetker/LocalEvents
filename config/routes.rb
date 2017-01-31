@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   post 'events' => 'events#create'
-  get 'signup' => 'hosts#new'
+  get '/signup' => 'hosts#new'
   get '/login' => 'sessions#new'
-  post 'login'=> 'sessions#create'
+  post '/login'=> 'sessions#create'
   delete 'logout' => 'sessions#destroy' 
   get 'logout' => 'sessions#destroy'
 
