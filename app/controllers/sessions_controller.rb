@@ -32,6 +32,7 @@ class SessionsController < ApplicationController
     	redirect_to '/'
   	else
     	redirect_to '/login'
+      flash[:notice] = "Wrong email and password." 
   	end 
 
   end

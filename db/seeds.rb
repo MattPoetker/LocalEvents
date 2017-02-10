@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create([{ name: 'Food'}, { name: 'Entertainment'}, { name: 'Sports'}, {name: 'Music'}, {name: 'Other'}])
+Category.create([{ name: 'Food', color: '#FF0000', slug: 'food'}, { name: 'Entertainment', color: '#FFDD00', slug: 'entertainment'}, { name: 'Sports', color: '#00FF00', slug: 'sports'}, {name: 'Music', color: '#0000FF', slug: 'music'}, {name: 'Other', color: '#333', slug: 'other'}])
 
 Event.create(name: 'Wing Night at The Double Decker', date: 'Every Wednesday Night', time: 'Starts at 6pm', description: 'Get a pound of wings for 3 dollars on Wednesday nights. You must purchase a drink with your meal.', host_id: 1, category_id: 1)
 

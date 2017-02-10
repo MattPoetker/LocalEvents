@@ -14,7 +14,7 @@
 <h3><%= e.date %></h3>
 <p><%= e.time %></p>
 <p><%= e.description %></p>
-<p>Hosted by <%= link_to e.host.name, e.host.website %></p>
+<p>Posted by <%= link_to e.host.name, e.host.website %></p>
 <p>Category: <%= e.category.name %></p>
 <% end %>
 </div>
@@ -22,7 +22,7 @@
 <h1>Categories</h1>
 <% @categories.each do |c| %>
 <h2><%= c.name %></h2>
-<p><%= link_to 'See All Events in This Category', c %></p>
+<p><%= link_to 'See All Events in This Category', "/categories/#{c.slug}" %></p>
 <% end %>
 </div>
 

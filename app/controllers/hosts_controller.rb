@@ -13,11 +13,18 @@ class HostsController < ApplicationController
 	end
 	def create
 		@host = Host.new(host_params)
-		if @host.save!
+		if @host.save
 			session[:host_id] = @host.id 
 			redirect_to '/'
 		else
-			redirect_to '/signup'
+			flash[:notice] = "There was a problem creating this user:" 
+			@error_hash = []
+			@host.errors.full_messages.each do |e|
+     			flash[:notice] += "\n" + e + "."
+     			puts e
+			end
+			render 'new'
+			
 		end
 	end
 	def host_params

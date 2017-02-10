@@ -18,11 +18,12 @@ class EventsController < ApplicationController
 		@event = Event.new(params.require(:event).permit(:name,:date,:time,:description))
 		@event.host = Host.find(session[:host_id])
 		@event.category = Category.first
-		if @event.save!
+		if @event.save
         	flash[:notice] = "Event created successfully"
       		redirect_to '/'
     	else
       		render('new')
+      		flash[:notice] = @event.errors if @event.errors.any?
     	end
   		
 	end
