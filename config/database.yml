@@ -10,7 +10,7 @@ development:
   encoding: utf8
   database: project_development
   pool: 5
-  host: localhost
+  host:
   username: 
   password: 
 
@@ -19,7 +19,7 @@ test: &TEST
   encoding: utf8
   database: project_test
   pool: 5
-  host: localhost
+  host: 
   username: 
   password: 
 
@@ -28,7 +28,7 @@ production:
   encoding: utf8
   database: project_production
   pool: 5
-  host: localhost
+  host:
   username: 
   password: 
 
