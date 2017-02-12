@@ -11,8 +11,7 @@ development:
   database: project_development
   pool: 5
   host:
-  username: 
-  password: 
+  username:  
 
 test: &TEST
   adapter: postgresql
@@ -20,8 +19,7 @@ test: &TEST
   database: project_test
   pool: 5
   host: 
-  username: 
-  password: 
+  username:  
 
 production:
   adapter: postgresql
@@ -29,8 +27,7 @@ production:
   database: project_production
   pool: 5
   host:
-  username: 
-  password: 
+  username:  
 
 cucumber:
   <<: *TEST
