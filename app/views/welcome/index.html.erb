@@ -22,7 +22,7 @@
 <h1>Categories</h1>
 <% @categories.each do |c| %>
 <h2><%= c.name %></h2>
-<p><%= link_to 'See All Events in This Category', "/categories/#{c.slug}" %></p>
+<p><%= link_to 'See All Events in This Category', category_path(c.slug) %></p>
 <% end %>
 </div>
 
