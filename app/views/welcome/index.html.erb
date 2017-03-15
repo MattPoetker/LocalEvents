@@ -2,21 +2,20 @@
 <% if session[:host_id] %>
 <%=	link_to "Logout", logout_path %>
 <% else %>
-<%=	link_to "Login", '/login'%>
+<%=	link_to "Login", new_session_path %>
 <% end %>
 <%= session[:host_id] %>
 <div>
 <h1>What's Happening?</h1>
 <p>List of Events</p>
-<%= link_to 'Post an Event', new_event_path %>
-<% @events.each do |e| %>
-<h2><%= e.name %><h2>
-<h3><%= e.date %></h3>
-<p><%= e.time %></p>
-<p><%= e.description %></p>
-<p>Posted by <%= link_to e.host.name, e.host.website %></p>
-<p>Category: <%= e.category.name %></p>
-<% end %>
+<%= link_to 'Post an Event', new_event_path %><p id="order"><%= session[:order] %></p>
+Order by: <%= link_to 'Event Title', order_by_path(:order_by => 'name'), remote: true, class: 'reorder' %>
+<%= link_to 'Host', order_by_path(:order_by => 'host_id'), remote: true, class: 'reorder' %>
+<%= link_to 'Event Date', order_by_path(:order_by => 'date DESC'), remote: true, class: 'reorder' %>
+<%= link_to 'Recently Created', order_by_path(:order_by => 'created_at'), remote: true, class: 'reorder' %>
+<div id="events-list">
+	<%= render partial: 'events', locals: { events: @events} %>
+</div>
 </div>
 <div>
 <h1>Categories</h1>

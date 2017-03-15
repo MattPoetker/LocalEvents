@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get '/order_by' => 'welcome#order_by', as: 'order_by'
   post 'events' => 'events#create'
   get '/signup' => 'hosts#new'
   get '/login' => 'sessions#new'

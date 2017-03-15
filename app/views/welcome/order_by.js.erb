@@ -1,0 +1,4 @@
+$("#events-list").hide();
+$("#events-list").html("<%= escape_javascript(render 'events', locals: { events: @events, event_order: @event_order } ) %>");
+$("#events-list").fadeIn(500);
+$("#order").html("<%= escape_javascript( @event_order ) %>");
