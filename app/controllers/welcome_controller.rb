@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-  	@events = Event.order(session[:order]).first(10)
+  	@events = Listing.where(:type => 'event').order(session[:order]).first(10)
   	@categories = Category.all
   	@hosts = Host.all
 

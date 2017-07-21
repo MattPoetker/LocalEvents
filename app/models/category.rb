@@ -1,3 +1,3 @@
-class Category < ApplicationRecord
-	belongs_to :events
+class Category < Listing
+	has_many :events
 end
