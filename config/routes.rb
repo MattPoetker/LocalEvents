@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :hosts
   resources :categories
   resources :events
+  resources :listings
   resources :sessions
 
   root 'welcome#index'

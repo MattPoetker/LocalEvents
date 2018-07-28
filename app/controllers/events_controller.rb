@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 		@event = Event.new
 	end
 	def create
-		@event = Event.new(params.require(:event).permit(:name,:date,:time,:description))
+		@event = Event.new(params.require(:event).permit(:name,:event_date,:time,:description))
 		@event.host = Host.find(session[:host_id])
 		@event.category = Category.first
 		if @event.save

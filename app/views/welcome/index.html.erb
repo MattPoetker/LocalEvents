@@ -8,11 +8,11 @@
 <div>
 <h1>What's Happening?</h1>
 <p>List of Events</p>
-<%= link_to 'Post an Event', new_event_path %><p id="order"><%= session[:order] %></p>
+<%= link_to 'Post a Listing', new_listing_path %><p id="order"><%= session[:order] %></p>
 Order by: <%= link_to 'Event Title', order_by_path(:order_by => 'name'), remote: true, class: 'reorder' %>
 <%= link_to 'Host', order_by_path(:order_by => 'host_id'), remote: true, class: 'reorder' %>
 <%= link_to 'Event Date', order_by_path(:order_by => 'date DESC'), remote: true, class: 'reorder' %>
-<%= link_to 'Recently Created', order_by_path(:order_by => 'created_at'), remote: true, class: 'reorder' %>
+<%= link_to 'Recently Created', order_by_path(:order_by => 'created_at DESC'), remote: true, class: 'reorder' %>
 <div id="events-list">
 	<%= render partial: 'events', locals: { events: @events} %>
 </div>
